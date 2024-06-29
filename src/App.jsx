@@ -25,9 +25,9 @@ function App() {
           <h1 className="text-2xl capitalize text-white mb-4 sm:mb-0 sm:text-3xl">
             <span className="text-blue-500">Hi</span>, Aaditya Mohan !!
           </h1>
-          <button className="text-white flex gap-2 sm:gap-10 capitalize font-semibold text-lg hover:text-blue-400">
-            <span className="hidden sm:inline-block ">Add New expense</span>
-            <CgAdd className="text-2xl sm:text-3xl " />
+          <button className="text-white flex gap-2 sm:gap-10 capitalize justify-between md:justify-normal font-semibold text-lg hover:text-blue-400">
+            <span className="sm:inline-block ">Add New expense</span>
+            <CgAdd className="text-4xl sm:text-3xl " />
           </button>
         </div>
       </div>
