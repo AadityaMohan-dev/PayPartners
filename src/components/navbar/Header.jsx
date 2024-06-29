@@ -1,11 +1,15 @@
 import { Fragment, useState, useEffect } from "react";
 import { Dialog, DialogBody } from "@material-tailwind/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-
+import SignIn from "../auth/SignIn";
+import SignUp from "../auth/SignUp";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State for user authentication
   const [isMobile, setIsMobile] = useState(false); // State to track mobile view
+  const [showLogin,setShowLogin] = useState(false)
+  const [showSignUp,setShowSignUp] = useState(false)
+  const [isAuthClose, setIsAuthClose] = useState(true)
 
   // Function to detect screen size
   const handleResize = () => {
@@ -24,6 +28,22 @@ export default function Header() {
   useEffect(() => {
     handleResize();
   }, []);
+
+  const handelLogin = () => {
+    setShowLogin(true)
+    setShowSignUp(false)
+  }
+
+  const handelSignUp = () => {
+    setShowSignUp(true)
+    setShowLogin(false)
+  }
+
+  const handleAuthOpen =() => {
+    setIsAuthClose(true)
+    setShowLogin(false)
+    setShowSignUp(false)
+  }
 
   return (
     <Fragment>
@@ -77,10 +97,10 @@ export default function Header() {
             ) : (
               // Show Login and Signup buttons when logged out
               <Fragment>
-                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600">
+                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600" onClick={handelLogin}>
                   Login
                 </button>
-                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600">
+                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600" onClick={handelSignUp}>
                   Signup
                 </button>
               </Fragment>
@@ -113,16 +133,28 @@ export default function Header() {
           {/* Right side: Login/Signup for mobile */}
           {!isLoggedIn && (
             <div className="flex items-center space-x-4">
-              <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">
+              <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600" onClick={handelLogin}>
                 Login
               </button>
-              <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">
+              <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600" onClick={handelSignUp}>
                 Signup
               </button>
             </div>
           )}
         </DialogBody>
       </Dialog>
+        {showLogin && (
+            <div id="siginpage" className="flex justify-center">
+                <SignIn/>
+            </div>
+            
+        )}
+        {showSignUp && (
+            <div id="siguppage" className="flex justify-center">
+            <SignUp/>
+        </div>
+        )}
+      
     </Fragment>
   );
 }
