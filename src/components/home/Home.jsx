@@ -1,5 +1,5 @@
 import React from "react";
-import { CgAdd } from "react-icons/cg";
+
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 
@@ -17,24 +17,8 @@ function Home() {
     ],
   };
   return (
-    <div id="home-container" className="p-5 sm:p-10 md:p-10">
-      <div
-        id="content"
-        className="shadow-lg rounded-xl bg-white min-w-xs max-w-full"
-      >
-        <div
-          id="greeting"
-          className="flex flex-col sm:flex-row justify-between shadow-lg rounded-lg p-5 bg-gradient-to-r from-gray-900 to-gray-600"
-        >
-          <h1 className="text-2xl capitalize text-white mb-4 sm:mb-0 sm:text-3xl">
-            <span className="text-blue-500">Hi</span>, Aaditya Mohan !!
-          </h1>
-          <button className="text-white flex gap-2 sm:gap-10 capitalize font-semibold text-lg hover:text-blue-400">
-            <span className="hidden sm:inline-block ">Add New expense</span>
-            <CgAdd className="text-2xl sm:text-3xl " />
-          </button>
-        </div>
-      </div>
+    <div id="home-container" className="p-5 sm:p-10 md:px-10 md:py-5">
+      
       <div
         id="graph-container"
         className="py-5 shadow-lg bg-white rounded-lg mt-3 px-10 divide-y"
@@ -153,7 +137,7 @@ function Home() {
           id="col-3"
           className="w-full md:w-full py-3 flex flex-wrap justify-around items-center"
         >
-          <h1 className="text-xl md:text-5xl py-5">Where you Spent </h1>
+          <h1 className="text-xl md:text-5xl py-5">Where you Spent !!</h1>
           <div id="graph" className="md:w-80 md:pt-10">
             <Doughnut data={data} />
           </div>
