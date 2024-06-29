@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <div id="main-container" className=''>
-    <div id="header" className='p-8 bg-teal-800 shadow-lg sticky'><Header/></div>
+    <div id="header" className=' shadow-lg sticky'><Header/></div>
    <div id="groups" className=''> <Groups/></div>
    <Home/>
     </div>
