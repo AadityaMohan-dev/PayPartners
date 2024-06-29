@@ -8,17 +8,19 @@ import Groups from './components/groups/Groups'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import Home from './components/home/Home'
+import AddNewExpense from './components/AddNewExpense'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <div id="main-container" className=''>
+    <div id="main-container" className='w-full min-w-xs'>
     <div id="header" className=' shadow-lg sticky'><Header/></div>
    <div id="groups" className=''> <Groups/></div>
    <Home/>
     </div>
+    <AddNewExpense/>
    </>
   )
 }

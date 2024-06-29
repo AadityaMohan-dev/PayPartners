@@ -77,10 +77,10 @@ export default function Header() {
             ) : (
               // Show Login and Signup buttons when logged out
               <Fragment>
-                <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">
+                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600">
                   Login
                 </button>
-                <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">
+                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600">
                   Signup
                 </button>
               </Fragment>
