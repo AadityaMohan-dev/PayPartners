@@ -5,6 +5,7 @@ import Groups from './components/groups/Groups'
 import Home from './components/home/Home'
 import AddNewExpense from './components/AddNewExpense'
 import { CgAdd } from "react-icons/cg";
+import UserContextProvider from './components/context/UserContextProvider'
 
 function App() {
 
@@ -12,7 +13,11 @@ function App() {
   return (
     <>
     <div id="main-container" className='w-full min-w-xs'>
-    <div id="header" className=' shadow-lg fixed w-full'><Header/></div>
+    <div id="header" className=' shadow-lg fixed w-full'>
+      <UserContextProvider>
+      <Header/>
+      </UserContextProvider>
+      </div>
    <div id="groups" className='pt-20'>
    <div
         id="content"

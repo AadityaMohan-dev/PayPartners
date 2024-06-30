@@ -1,49 +1,60 @@
-import { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useCallback, useContext, useMemo } from "react";
 import { Dialog, DialogBody } from "@material-tailwind/react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import SignIn from "../auth/SignIn";
 import SignUp from "../auth/SignUp";
+import { UserContext } from "../context/UserContextProvider";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State for user authentication
-  const [isMobile, setIsMobile] = useState(false); // State to track mobile view
-  const [showLogin,setShowLogin] = useState(false)
-  const [showSignUp,setShowSignUp] = useState(false)
-  const [isAuthClose, setIsAuthClose] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
 
-  // Function to detect screen size
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768); // Example breakpoint for mobile view
-  };
+  const { isAuthClose, setIsAuthClose } = useContext(UserContext);
 
-  // Event listener for screen resize
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
-  // Initial check for mobile view on component mount
   useEffect(() => {
-    handleResize();
+    setShowLogin(false);
+    setShowSignUp(false);
+  }, [isAuthClose]);
+
+  const handleCloseForms = useCallback(() => {
+    setShowLogin(false);
+    setShowSignUp(false);
   }, []);
 
-  const handelLogin = () => {
-    setShowLogin(true)
-    setShowSignUp(false)
-  }
+  const handelLogin = useCallback(() => {
+    setShowLogin(true);
+    setShowSignUp(false);
+    setIsAuthClose(false);
+  }, [setShowLogin, setShowSignUp, setIsAuthClose]);
 
-  const handelSignUp = () => {
-    setShowSignUp(true)
-    setShowLogin(false)
-  }
+  const handelSignUp = useCallback(() => {
+    setShowSignUp(true);
+    setShowLogin(false);
+    setIsAuthClose(false);
+  }, [setShowSignUp, setShowLogin, setIsAuthClose]);
 
-  const handleAuthOpen =() => {
-    setIsAuthClose(true)
-    setShowLogin(false)
-    setShowSignUp(false)
-  }
+  const loginButtonDisabled = useMemo(() => {
+    return showLogin || showSignUp; // Disable button when either form is shown
+  }, [showLogin, showSignUp]);
+
+  const signUpButtonDisabled = useMemo(() => {
+    return showLogin || showSignUp; // Disable button when either form is shown
+  }, [showLogin, showSignUp]);
 
   return (
     <Fragment>
@@ -67,7 +78,7 @@ export default function Header() {
         </div>
 
         {/* Right side: Menu items */}
-        {!isMobile && ( // Hide menu items on mobile view
+        {!isMobile && (
           <div className="hidden md:flex items-center space-x-4">
             {/* Menu items */}
             <a href="#" className="hover:text-blue-500">
@@ -86,7 +97,7 @@ export default function Header() {
         )}
 
         {/* Right side: Login/Signup */}
-        {!isMobile && ( // Hide login/signup on mobile view
+        {!isMobile && (
           <div className="hidden md:flex items-center space-x-4">
             {/* Conditional rendering based on authentication */}
             {isLoggedIn ? (
@@ -97,10 +108,18 @@ export default function Header() {
             ) : (
               // Show Login and Signup buttons when logged out
               <Fragment>
-                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600" onClick={handelLogin}>
+                <button
+                  className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600"
+                  onClick={handelLogin}
+                  disabled={loginButtonDisabled}
+                >
                   Login
                 </button>
-                <button className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600" onClick={handelSignUp}>
+                <button
+                  className="px-3 py-1 rounded-md bg-blue-500 font-semibold text-white hover:bg-blue-600"
+                  onClick={handelSignUp}
+                  disabled={signUpButtonDisabled}
+                >
                   Signup
                 </button>
               </Fragment>
@@ -133,28 +152,36 @@ export default function Header() {
           {/* Right side: Login/Signup for mobile */}
           {!isLoggedIn && (
             <div className="flex items-center space-x-4">
-              <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600" onClick={handelLogin}>
+              <button
+                className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600"
+                onClick={handelLogin}
+                disabled={loginButtonDisabled}
+              >
                 Login
               </button>
-              <button className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600" onClick={handelSignUp}>
+              <button
+                className="px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600"
+                onClick={handelSignUp}
+                disabled={signUpButtonDisabled}
+              >
                 Signup
               </button>
             </div>
           )}
         </DialogBody>
       </Dialog>
-        {showLogin && (
-            <div id="siginpage" className="flex justify-center">
-                <SignIn/>
-            </div>
-            
-        )}
-        {showSignUp && (
-            <div id="siguppage" className="flex justify-center">
-            <SignUp/>
+
+      {/* Conditional rendering for login and signup forms */}
+      {showLogin && (
+        <div id="siginpage" className="flex justify-center">
+          <SignIn onClose={handleCloseForms} />
         </div>
-        )}
-      
+      )}
+      {showSignUp && (
+        <div id="siguppage" className="flex justify-center">
+          <SignUp onClose={handleCloseForms} />
+        </div>
+      )}
     </Fragment>
   );
 }
