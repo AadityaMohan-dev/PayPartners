@@ -18,13 +18,13 @@ function Groups() {
             <span className="text-xs md:text-sm text-blue-900">Group Name</span>
             <span className="text-xs md:text-sm text-blue-900">Total Number of Members</span>
             <span className="text-xs md:text-sm text-blue-900">Total Expense</span>
-            <span className="capitalize text-xs md:text-sm text-blue-600">see more</span>
+            <span className="capitalize text-xs md:text-sm text-blue-600 cursor-pointer">see more</span>
           </li>
           <li className="flex flex-wrap justify-between items-center hover:shadow-md hover:shadow-blue-950 rounded-lg p-4 md:p-5 bg-blue-100 mt-2">
             <span className="text-xs md:text-sm text-blue-900">Group Name 2</span>
             <span className="text-xs md:text-sm text-blue-900">Total Number of Members 2</span>
             <span className="text-xs md:text-sm text-blue-900">Total Expense 2</span>
-            <span className="capitalize text-xs md:text-sm text-blue-600">see more</span>
+            <span className="capitalize text-xs md:text-sm text-blue-600 cursor-pointer">see more</span>
           </li>
         </ul>
       </div>
