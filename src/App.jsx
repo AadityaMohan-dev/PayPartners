@@ -22,7 +22,7 @@ function App() {
    <div id="groups" className='pt-20'>
    <div
         id="content"
-        className="min-w-xs max-w-full pt-5 px-10"
+        className="min-w-xs max-w-full p-5"
       >
         <div
           id="greeting"

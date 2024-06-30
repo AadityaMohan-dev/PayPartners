@@ -3,9 +3,12 @@ import React from 'react'
 function TransactionList() {
   return (
     <>
-    <div id="main-container" className='px-10 py-5'>
+    <div id="main-container" className='p-5'>
         <div id="content" className='shadow-lg rounded-lg bg-white p-10'>
+        <div id="row-1" className='flex justify-between pb-5'>
         <h1 className='text-xl md:text-2xl py-5'>All Transaction List</h1> 
+        <img width="60" height="48" src="https://img.icons8.com/color/48/purchase-order.png" alt="purchase-order"/>
+        </div>
 <ul class="max-w-full h-auto md:h-screen divide-y overflow-auto  divide-gray-200 dark:divide-gray-700">
    
    <li class="pb-3 sm:pb-4">
