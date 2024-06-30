@@ -6,6 +6,7 @@ import Home from './components/home/Home'
 import AddNewExpense from './components/AddNewExpense'
 import { CgAdd } from "react-icons/cg";
 import UserContextProvider from './components/context/UserContextProvider'
+import TransactionList from './components/TransactionList'
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
           className="flex flex-col sm:flex-row justify-between shadow-lg rounded-lg p-5 bg-gradient-to-r from-gray-900 to-gray-600"
         >
           <h1 className="text-2xl capitalize text-white mb-4 sm:mb-0 sm:text-3xl">
-            <span className="text-blue-500">Hi</span>, Aaditya Mohan !!
+            <span>👋 </span><span className="text-blue-500">Hi</span>, Aaditya Mohan !!
           </h1>
           <button className="text-white flex gap-2 sm:gap-10 capitalize justify-between md:justify-normal font-semibold text-lg hover:text-blue-400">
             <span className="sm:inline-block ">Add New expense</span>
@@ -41,6 +42,7 @@ function App() {
    <Home/>
     </div>
     <AddNewExpense/>
+    <TransactionList/>
    </>
   )
 }

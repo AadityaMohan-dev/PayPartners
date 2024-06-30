@@ -29,7 +29,7 @@ function Home() {
 
             <div class="w-full h-80 overflow-y-scroll mb-5 mt-4 max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
               <div class="flex items-center justify-between mb-4 ">
-                <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
+                <h5 class="text-xl  leading-none text-gray-900 dark:text-white">
                   Latest Expenses
                 </h5>
                 <a
