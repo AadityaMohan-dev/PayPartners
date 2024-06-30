@@ -11,7 +11,7 @@ function Groups() {
         </div>
         <div className="flex items-center gap-4 md:gap-10 mb-4 md:mb-5">
           <span className="text-lg md:text-xl">Add More Groups</span>
-          <IoIosAddCircleOutline className="text-4xl md:text-5xl hover:text-blue-600" />
+          <IoIosAddCircleOutline className="text-4xl md:text-3xl hover:text-blue-600" />
         </div>
         <ul className="divide-y">
           <li className="flex flex-wrap justify-between items-center hover:shadow-md hover:shadow-blue-950 rounded-lg p-4 md:p-5 bg-blue-100 mt-2">
