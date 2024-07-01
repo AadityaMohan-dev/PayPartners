@@ -26,9 +26,8 @@ function Home() {
         <div id="row-1" className="flex flex-wrap justify-around">
           <div id="col-1" className="w-full md:w-1/2 py-3">
             <h1 className="text-xl md:text-2xl">Transactions</h1>
-
-            <div class="w-full h-80 overflow-y-scroll mb-5 mt-4 max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-              <div class="flex items-center justify-between mb-4 ">
+            <div class="w-full h-64 overflow-y-scroll mb-5 mt-4 max-w-md p-4 bg-white sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+              <div class="flex items-center justify-between mb-4 shadow-lg p-5 rounded-lg">
                 <h5 class="text-xl  leading-none text-gray-900 dark:text-white">
                   Latest Expenses
                 </h5>

@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 
+
 function AddNewExpense() {
+
+ 
+
   return (
     <div id="main-container" className="p-10">
-      <div id="card" className="shadow-lg ba bg-white rounded-lg w-full p-5">
+ <div id="close-row" className='text-3xl md:text-5xl fixed w-full flex justify-end p-10 cursor-pointer' onClick={()=> setIsAuthClose(true)}><IoCloseSharp className='rounded-full bg-white'/></div>
+      <div id="card" className="shadow-lg ba bg-white rounded-lg  w-full md:w-[720px] p-5">
         <div id="row-1" className="flex justify-between">
         <h1 className="text-2xl  leading-none text-gray-900 dark:text-white pb-5">
           Add An Expense
         </h1>
-        <div id="close-row" className='text-3xl md:text-5xl fixed w-full flex justify-end p-10 cursor-pointer' onClick={()=>setIsAuthClose(true)}><IoCloseSharp /></div>
         </div>
+
        <form class="max-w-full mx-auto grid justify-center items-center grid-cols-2 gap-5">
           
           <div class="mb-5">
