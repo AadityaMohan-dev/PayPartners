@@ -79,7 +79,7 @@ export default function Header() {
 
         {/* Right side: Menu items */}
         {!isMobile && (
-          <div className="hidden md:flex items-center space-x-4 uppercase">
+          <div className="hidden md:flex items-center space-x-4 uppercase font-semibold">
             {/* Menu items */}
             <a href="#" className="hover:text-blue-500">
               Home
@@ -134,7 +134,7 @@ export default function Header() {
         open={open}
         handler={() => setOpen(!open)}
       >
-        <DialogBody className="flex flex-col justify-center items-center space-y-4 uppercase">
+        <DialogBody className="flex flex-col justify-center items-center space-y-4 uppercase ">
           {/* Menu items */}
           <a href="#" className="hover:text-blue-500">
             Home

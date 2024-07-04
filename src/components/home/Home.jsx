@@ -17,129 +17,74 @@ function Home() {
     ],
   };
   return (
-    <div id="home-container" className="p-5 sm:p-10 md:px-10 md:py-5">
-      
-      <div
-        id="graph-container"
-        className="py-5 shadow-lg bg-white rounded-lg mt-3 px-10 divide-y"
-      >
-        <div id="row-1" className="flex flex-wrap justify-around">
-          <div id="col-1" className="w-full md:w-1/2 py-3">
-            <h1 className="text-xl md:text-2xl">Transactions</h1>
-            <div class="w-full h-64 overflow-y-scroll mb-5 mt-4 max-w-md p-4 bg-white sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-              <div class="flex items-center justify-between mb-4 shadow-lg p-5 rounded-lg">
-                <h5 class="text-xl  leading-none text-gray-900 dark:text-white">
-                  Latest Expenses
-                </h5>
-                <a
-                  href="#"
-                  class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >
-                  View all
-                </a>
-              </div>
-              <div class="flow-root">
-                <ul
-                  role="list"
-                  class="divide-y divide-gray-200 dark:divide-gray-700"
-                >
-                  <li class="py-3 sm:py-4">
-                    <div class="flex items-center">
-                      <div class="flex-shrink-0"></div>
-                      <div class="flex-1 min-w-0 ms-4">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          Neil Sims
-                        </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                          email@windster.com
-                        </p>
-                      </div>
-                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $320
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-3 sm:py-4">
-                    <div class="flex items-center ">
-                      <div class="flex-shrink-0"></div>
-                      <div class="flex-1 min-w-0 ms-4">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          Bonnie Green
-                        </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                          email@windster.com
-                        </p>
-                      </div>
-                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $3467
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-3 sm:py-4">
-                    <div class="flex items-center">
-                      <div class="flex-shrink-0"></div>
-                      <div class="flex-1 min-w-0 ms-4">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          Michael Gough
-                        </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                          email@windster.com
-                        </p>
-                      </div>
-                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $67
-                      </div>
-                    </div>
-                  </li>
-                  <li class="py-3 sm:py-4">
-                    <div class="flex items-center ">
-                      <div class="flex-shrink-0"></div>
-                      <div class="flex-1 min-w-0 ms-4">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          Lana Byrd
-                        </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                          email@windster.com
-                        </p>
-                      </div>
-                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $367
-                      </div>
-                    </div>
-                  </li>
-                  <li class="pt-3 pb-0 sm:pt-4">
-                    <div class="flex items-center ">
-                      <div class="flex-shrink-0"></div>
-                      <div class="flex-1 min-w-0 ms-4">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                          Thomes Lean
-                        </p>
-                        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                          email@windster.com
-                        </p>
-                      </div>
-                      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                        $2367
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <div id="home-container" className="p-5 sm:p-10 md:px-5 md:py-5">
+      <div id="row-1" className="flex flex-wrap justify-between ">
+        <div
+          id="col-1-transactions"
+          className="shadow-lg bg-white md:w-[620px]  p-5 rounded-lg"
+        >
+          <h1 className="text-xl md:text-2xl">Transactions</h1>
+          <div
+            id="list-of-recent-transactions-head"
+            className="flex justify-between px-5 shadow-lg rounded-lg py-5 mt-2  bg-gradient-to-r from-gray-900 to-gray-600"
+          >
+            <h5 class="text-lg  leading-none text-white dark:text-white">
+              Latest Expenses
+            </h5>
+            <a
+              href="#"
+              class="text-sm font-medium text-white hover:text-blue-00 hover:underline dark:text-blue-500"
+            >
+              View all
+            </a>
           </div>
-          <div id="col-2" className="w-full md:w-1/2 py-3">
+          <ul className="mt-3  overflow-y-auto h-72">
+            <li className="flex justify-around p-3 shadow-lg rounded-lg hover:bg-blue-100 bg-blue-200">
+              <div class="flex-1 min-w-0 ms-4">
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                  Expense Name
+                </p>
+                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                  Who paid
+                </p>
+              </div>
+              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                $2367
+              </div>
+            </li>
+            <li className="flex justify-around p-3 shadow-lg rounded-lg my-3 bg-blue-200">
+              <div class="flex-1 min-w-0 ms-4">
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                  Thomes Lean
+                </p>
+                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                  email@windster.com
+                </p>
+              </div>
+              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                $2367
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          id="col-2-expenses"
+          className="shadow-lg bg-white w-1/2 p-5 rounded-lg"
+        >
+          <div id="col-2" className="w-full  py-3">
             <h1 className="text-xl md:text-2xl">Total Expense</h1>
             <Bar data={data} />
           </div>
         </div>
-        <div
-          id="col-3"
-          className="w-full md:w-full py-3 flex flex-wrap justify-around items-center"
-        >
-          <h1 className="text-xl md:text-5xl py-5">Where you Spent !!</h1>
-          <div id="graph" className="md:w-80 md:pt-10">
-            <Doughnut data={data} />
-          </div>
+      </div>
+      <div
+        id="row-2"
+        className="shadow-lg bg-white flex flex-wrap justify-around items-center pb-10 px-5 rounded-lg mt-5 w-full "
+      >
+        <h1 className="text-xl md:text-5xl py-5">Where you Spent !!</h1>
+        <div id="graph" className="md:w-80 md:pt-10">
+          <Doughnut data={data} />
         </div>
       </div>
     </div>
