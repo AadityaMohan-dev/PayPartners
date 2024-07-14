@@ -5,6 +5,8 @@ function UserContextProvider({ children }) {
   const [isLogedin, setIsLogedin] = useState(false);
   const [isAuthClose, setIsAuthClose] = useState(true);
   const [isExpenseWindowOpen, setIsExpenseWindowOpen] = useState(false);
+  const [user,setUser] = useState({});
+  console.log(isLogedin);
   return (
     <UserContext.Provider
       value={{
@@ -14,6 +16,7 @@ function UserContextProvider({ children }) {
         setIsAuthClose,
         isExpenseWindowOpen,
         setIsExpenseWindowOpen,
+        user,setUser
       }}
     >
       {children}

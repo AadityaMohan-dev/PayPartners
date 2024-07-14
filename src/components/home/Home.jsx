@@ -28,40 +28,40 @@ function Home() {
             id="list-of-recent-transactions-head"
             className="flex justify-between px-5 shadow-lg rounded-lg py-5 mt-2  bg-gradient-to-r from-gray-900 to-gray-600"
           >
-            <h5 class="text-lg  leading-none text-white dark:text-white">
+            <h5 className="text-lg  leading-none text-white dark:text-white">
               Latest Expenses
             </h5>
             <a
               href="#"
-              class="text-sm font-medium text-white hover:text-blue-00 hover:underline dark:text-blue-500"
+              className="text-sm font-medium text-white hover:text-blue-00 hover:underline dark:text-blue-500"
             >
               View all
             </a>
           </div>
           <ul className="mt-3  overflow-y-auto h-72">
             <li className="flex justify-around p-3 shadow-lg rounded-lg hover:bg-blue-100 bg-blue-200">
-              <div class="flex-1 min-w-0 ms-4">
-                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+              <div className="flex-1 min-w-0 ms-4">
+                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                   Expense Name
                 </p>
-                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                   Who paid
                 </p>
               </div>
-              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+              <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                 $2367
               </div>
             </li>
             <li className="flex justify-around p-3 shadow-lg rounded-lg my-3 bg-blue-200">
-              <div class="flex-1 min-w-0 ms-4">
-                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+              <div className="flex-1 min-w-0 ms-4">
+                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                   Thomes Lean
                 </p>
-                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                   email@windster.com
                 </p>
               </div>
-              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+              <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                 $2367
               </div>
             </li>

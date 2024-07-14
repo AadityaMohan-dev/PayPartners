@@ -4,6 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import SignIn from "../auth/SignIn";
 import SignUp from "../auth/SignUp";
 import { UserContext } from "../context/UserContextProvider";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Header() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
-  const { isAuthClose, setIsAuthClose, isLoggedIn } = useContext(UserContext);
+  const { isAuthClose, setIsAuthClose, isLoggedIn, user } = useContext(UserContext);
 
   const handleResize = useCallback(() => {
     setIsMobile(window.innerWidth < 768);
@@ -72,31 +73,33 @@ export default function Header() {
             </button>
           </div>
           {/* Logo */}
+          <Link to="">
           <div className="text-xl font-bold">
             <span className="text-blue-500">Pay</span>Partners
           </div>
+          </Link>
         </div>
 
         {/* Right side: Menu items */}
         {!isMobile && (
           <div className="hidden md:flex items-center space-x-4 uppercase font-semibold">
             {/* Menu items */}
-            <a href="#" className="hover:text-blue-500">
+            <Link to="" className="hover:text-blue-500">
               Home
-            </a>
-            <a href="#" className="hover:text-blue-500">
+            </Link>
+            <Link to="/groups" className="hover:text-blue-500">
               Groups
-            </a>
-            <a href="#" className="hover:text-blue-500">
+            </Link>
+            <Link to="/about" className="hover:text-blue-500">
               About
-            </a>
-            <a href="#" className="hover:text-blue-500">
+            </Link>
+            <Link to="/contact-us" className="hover:text-blue-500">
               Contact Us
-            </a>
+            </Link>
           </div>
         )}
 
-        {/* Right side: Login/Signup */}
+        {/* Right side: Login/Signup or Profile */}
         {!isMobile && (
           <div className="hidden md:flex items-center space-x-4">
             {/* Conditional rendering based on authentication */}
@@ -136,18 +139,18 @@ export default function Header() {
       >
         <DialogBody className="flex flex-col justify-center items-center space-y-4 uppercase ">
           {/* Menu items */}
-          <a href="#" className="hover:text-blue-500">
+          <Link to="" className="hover:text-blue-500">
             Home
-          </a>
-          <a href="#" className="hover:text-blue-500">
+          </Link>
+          <Link to="/groups" className="hover:text-blue-500">
             Groups
-          </a>
-          <a href="#" className="hover:text-blue-500">
+          </Link>
+          <Link to="/about" className="hover:text-blue-500">
             About
-          </a>
-          <a href="#" className="hover:text-blue-500">
+          </Link>
+          <Link to="/contact-us" className="hover:text-blue-500">
             Contact Us
-          </a>
+          </Link>
 
           {/* Right side: Login/Signup for mobile */}
           {!isLoggedIn && (
@@ -171,7 +174,7 @@ export default function Header() {
         </DialogBody>
       </Dialog>
 
-      {/* Conditional rendering for login and signup forms */}
+      {/* Conditionally render SignIn and SignUp components */}
       {showLogin && (
         <div id="siginpage" className="flex justify-center">
           <SignIn onClose={handleCloseForms} />
