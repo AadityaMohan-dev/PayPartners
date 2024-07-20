@@ -10,35 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-    "@material-tailwind/react": "^2.1.9",
-    "chart.js": "^4.4.3",
-    "firebase": "^10.12.2",
->>>>>>> Stashed changes
-=======
+
     "@material-tailwind/react": "^2.1.9",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
->>>>>>> e57fdc93ff630fb5a3e53185362d415f2c6ffb4c
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.24.1",
     "react-toastify": "^10.0.5",
->>>>>>> e57fdc93ff630fb5a3e53185362d415f2c6ffb4c
     "remixicon": "^4.3.0"
-=======
-    "react-icons": "^5.2.1",
-    "react-router-dom": "^6.24.0",
-    "remixicon": "^4.3.0",
-    "uid": "^2.0.2"
->>>>>>> Stashed changes
+
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
