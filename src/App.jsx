@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./components/navbar/Header";
 import { ToastContainer } from 'react-toastify';
-
 import UserContextProvider from "./components/context/UserContextProvider";
 import { Outlet } from "react-router-dom";
 
@@ -14,7 +13,6 @@ function App() {
       </div>
       <div id="outlet" className="h-full overflow-auto">
        <Outlet/>
-       {/* <GroupTemplate/> */}
       </div>
       
       <ToastContainer />

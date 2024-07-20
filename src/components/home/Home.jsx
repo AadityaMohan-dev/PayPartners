@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CgAdd } from "react-icons/cg";
 import { Chart as ChartJS } from "chart.js/auto";
+import AddNewExpense from "../AddNewExpense";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import { UserContext } from "../context/UserContextProvider";
 
@@ -46,7 +47,7 @@ function Home() {
               id="expense-window"
               className="backdrop-blur-sm flex justify-center absolute inset-0"
             >
-              <AddNewExpense />
+              <AddNewExpense/>
             </div>
           )}
      </div>
