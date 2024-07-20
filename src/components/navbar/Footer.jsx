@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 const Footer = () => {
@@ -80,3 +81,20 @@ const Footer = () => {
 };
 
 export default Footer;
+=======
+import React from 'react'
+
+function Footer() {
+  return (
+    <>
+    <div id="main">
+        <div id="circle" className='rounded-full shadow-lg bg-blue-950 w-10 h-10'>
+            handelLogin
+        </div>
+    </div>
+    </>
+  )
+}
+
+export default Footer
+>>>>>>> e57fdc93ff630fb5a3e53185362d415f2c6ffb4c

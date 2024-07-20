@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -19,8 +20,18 @@ import Footer from './components/navbar/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
+=======
+import "./App.css";
+import Header from "./components/navbar/Header";
+import { ToastContainer } from 'react-toastify';
+import UserContextProvider from "./components/context/UserContextProvider";
+import { Outlet } from "react-router-dom";
+>>>>>>> e57fdc93ff630fb5a3e53185362d415f2c6ffb4c
 
+function App() { 
+  
   return (
+<<<<<<< HEAD
     <>
 <<<<<<< Updated upstream
     <div id="main-container" className=''>
@@ -67,6 +78,27 @@ function App() {
    </>
 
   )
+=======
+    <div id="main-container" className="w-full min-w-xs">
+      <div id="header" className="shadow-lg fixed w-full">
+        <Header />
+      </div>
+      <div id="outlet" className="h-full overflow-auto">
+       <Outlet/>
+      </div>
+      
+      <ToastContainer />
+    </div>
+  );
+>>>>>>> e57fdc93ff630fb5a3e53185362d415f2c6ffb4c
 }
 
-export default App
+function AppWrapper() {
+  return (
+    <UserContextProvider>
+      <App />
+    </UserContextProvider>
+  );
+}
+
+export default AppWrapper;
