@@ -1,7 +1,8 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { CgAdd } from "react-icons/cg";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { UserContext } from "../context/UserContextProvider";
 
 function Home() {
   const data = {
@@ -16,8 +17,39 @@ function Home() {
       },
     ],
   };
+  const { isExpenseWindowOpen, setIsExpenseWindowOpen, user } = useContext(UserContext);
   return (
     <div id="home-container" className="p-5 sm:p-10 md:px-5 md:py-5">
+     <div id="row-0" className="mt-14 z-10 mb-5">
+     <div
+            id="greeting"
+            className="flex flex-col sm:flex-row justify-between shadow-lg rounded-lg p-5 bg-gradient-to-r from-gray-900 to-gray-600"
+          >
+            <h1 className="text-2xl capitalize text-white mb-4 sm:mb-0 sm:text-3xl">
+              <span>👋 </span>
+              <span className="text-blue-500">Hi</span> Welcome  {user ? user.name : "Guest"} !!
+            </h1>
+
+            <button
+              className="text-white flex gap-2 sm:gap-10 capitalize justify-between md:justify-normal font-semibold text-lg hover:text-blue-400"
+              onClick={() => {
+                setIsExpenseWindowOpen(true);
+              }}
+            >
+              <span className="sm:inline-block">Add New expense</span>
+              <CgAdd className="text-4xl sm:text-3xl" />
+            </button>
+          </div>
+
+          {isExpenseWindowOpen && (
+            <div
+              id="expense-window"
+              className="backdrop-blur-sm flex justify-center absolute inset-0"
+            >
+              <AddNewExpense />
+            </div>
+          )}
+     </div>
       <div id="row-1" className="flex flex-wrap justify-between ">
         <div
           id="col-1-transactions"

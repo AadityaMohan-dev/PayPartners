@@ -3,7 +3,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 
 function Groups() {
   return (
-    <div className="p-4 md:px-10">
+    <div className="p-4 md:px-10 py-20">
       <div className="shadow-lg bg-white rounded-lg px-4 md:px-10 py-6">
         <div id="row-1" className="flex justify-between">
           <h1 className="text-2xl md:text-3xl mb-4 md:mb-5">Groups</h1>
@@ -19,7 +19,7 @@ function Groups() {
           <IoIosAddCircleOutline className="text-4xl md:text-3xl hover:text-blue-600" />
         </div>
         <ul className="divide-y">
-          <li className="flex flex-wrap justify-between items-center hover:shadow-md hover:shadow-blue-950 rounded-lg p-4 md:p-5 bg-blue-100 mt-2">
+          <li className="flex flex-wrap justify-between items-center hover:shadow-md rounded-lg p-4 md:p-5 bg-blue-100 mt-2">
             <span className="text-xs md:text-sm text-blue-900">Group Name</span>
             <span className="text-xs md:text-sm text-blue-900">
               Total Number of Members
@@ -31,7 +31,7 @@ function Groups() {
               see more
             </span>
           </li>
-          <li className="flex flex-wrap justify-between items-center hover:shadow-md hover:shadow-blue-950 rounded-lg p-4 md:p-5 bg-blue-100 mt-2">
+          <li className="flex flex-wrap justify-between items-center hover:shadow-md rounded-lg p-4 md:p-5 bg-blue-100 mt-2">
             <span className="text-xs md:text-sm text-blue-900">
               Group Name 2
             </span>

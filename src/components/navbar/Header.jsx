@@ -32,8 +32,6 @@ export default function Header() {
   }, [isAuthClose]);
 
   const handleCloseForms = useCallback(() => {
-    setShowLogin(false);
-    setShowSignUp(false);
     setIsAuthClose(true);
   }, []);
 
@@ -41,13 +39,13 @@ export default function Header() {
     setShowLogin(true);
     setShowSignUp(false);
     setIsAuthClose(false);
-  }, [setShowLogin, setShowSignUp, setIsAuthClose]);
+  }, [setShowLogin, setShowSignUp]);
 
   const handelSignUp = useCallback(() => {
     setShowSignUp(true);
     setShowLogin(false);
     setIsAuthClose(false);
-  }, [setShowSignUp, setShowLogin, setIsAuthClose]);
+  }, [setShowSignUp, setShowLogin]);
 
   const loginButtonDisabled = useMemo(() => {
     return showLogin || showSignUp; // Disable button when either form is shown
