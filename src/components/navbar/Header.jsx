@@ -91,7 +91,7 @@ export default function Header() {
             <Link to="/about" className="hover:text-blue-500">
               About
             </Link>
-            <Link to="/contact-us" className="hover:text-blue-500">
+            <Link to="/contact" className="hover:text-blue-500">
               Contact Us
             </Link>
           </div>
@@ -146,7 +146,7 @@ export default function Header() {
           <Link to="/about" className="hover:text-blue-500">
             About
           </Link>
-          <Link to="/contact-us" className="hover:text-blue-500">
+          <Link to="/contact" className="hover:text-blue-500">
             Contact Us
           </Link>
 

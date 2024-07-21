@@ -20,7 +20,7 @@ function Home() {
   };
   const { isExpenseWindowOpen, setIsExpenseWindowOpen, user } = useContext(UserContext);
   return (
-    <div id="home-container" className="p-5 sm:p-10 md:px-5 md:py-5">
+    <div id="home-container" className="p-5 sm:p-10 md:px-5 md:py-5 bg-gray-100">
      <div id="row-0" className="mt-14 z-10 mb-5">
      <div
             id="greeting"

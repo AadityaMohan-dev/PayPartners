@@ -3,7 +3,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 
 function Groups() {
   return (
-    <div className="p-4 md:px-10 py-20">
+    <div className="p-4 md:px-10 pt-28 pb-10 min-h-screen bg-gray-100">
       <div className="shadow-lg bg-white rounded-lg px-4 md:px-10 py-6">
         <div id="row-1" className="flex justify-between">
           <h1 className="text-2xl md:text-3xl mb-4 md:mb-5">Groups</h1>

@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './components/home/Home.jsx';
-import Groups from './components/groups_list/Groups.jsx';
+import Home from './components/screens/Home.jsx';
+import Groups from './components/screens/groups_list/Groups.jsx';
+import AboutPage from './components/screens/About.jsx';
+import Contact from './components/screens/Contact.jsx';
 
 
 
@@ -15,6 +17,8 @@ const routes = createBrowserRouter([
     children : [
       {path:'', element : <Home/>},
       {path:'/groups', element :<Groups/>},
+      {path:'/about',element:<AboutPage/>},
+      {path:'/contact',element:<Contact/>}
     ]
   }
 ]) ;
